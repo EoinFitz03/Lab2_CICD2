@@ -6,10 +6,13 @@ app = FastAPI()
 users: list[User] = []
 
 
+@app.get("/Health")
+def health():
+    return {"Status": "ok"}
+
 @app.get("/hello")
 def hello():
     return {"message": "Hello, World!"}
-
 
 
 @app.get("/api/users")
